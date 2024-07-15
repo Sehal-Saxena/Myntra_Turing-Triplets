@@ -1,0 +1,211 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot Interface</title>
+</head>
+<body>
+    <h1>Clothing Recommendation Chatbot</h1>
+    <form id="chatForm">
+        <label for="weather">Weather:</label><br>
+        <input type="text" id="weather" name="weather"><br>
+        <label for="occasion">Occasion:</label><br>
+        <input type="text" id="occasion" name="occasion"><br>
+        <label for="material">Material:</label><br>
+        <input type="text" id="material" name="material"><br>
+        <input type="button" value="Submit" onclick="sendPreferences()">
+    </form>
+
+    <h2>Recommendations:</h2>
+    <div id="recommendations"></div>
+
+    <script>
+        function sendPreferences() {
+            const weather = document.getElementById('weather').value;
+            const occasion = document.getElementById('occasion').value;
+            const material = document.getElementById('material').value;
+
+            fetch('/chatbot', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    weather: weather,
+                    occasion: occasion,
+                    material: material
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const recommendationsDiv = document.getElementById('recommendations');
+                recommendationsDiv.innerHTML = '';
+                data.forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.innerHTML = `<img src="${item.image_path}" alt="Image" style="width:100px;height:100px;"><br>
+                                         Weather: ${item.weather}<br>
+                                         Occasion: ${item.occasion}<br>
+                                         Material: ${item.material}<br><br>`;
+                    recommendationsDiv.appendChild(itemDiv);
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot Interface</title>
+</head>
+<body>
+    <h1>Clothing Recommendation Chatbot</h1>
+    <form id="chatForm">
+        <label for="weather">Weather:</label><br>
+        <input type="text" id="weather" name="weather"><br>
+        <label for="occasion">Occasion:</label><br>
+        <input type="text" id="occasion" name="occasion"><br>
+        <label for="material">Material:</label><br>
+        <input type="text" id="material" name="material"><br>
+        <input type="button" value="Submit" onclick="sendPreferences()">
+    </form>
+
+    <h2>Recommendations:</h2>
+    <div id="recommendations"></div>
+
+    <script>
+        function sendPreferences() {
+            const weather = document.getElementById('weather').value;
+            const occasion = document.getElementById('occasion').value;
+            const material = document.getElementById('material').value;
+
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    weather: weather,
+                    occasion: occasion,
+                    material: material
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const recommendationsDiv = document.getElementById('recommendations');
+                recommendationsDiv.innerHTML = '';
+                data.recommended_clothes.forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.innerHTML = `<img src="${item.image_url}" alt="Image" style="width:100px;height:100px;"><br>
+                                         Weather: ${item.weather}<br>
+                                         Occasion: ${item.Occasion}<br>
+                                         Material: ${item.material}<br>
+                                         Suitability: ${item.Suitability}<br><br>`;
+                    recommendationsDiv.appendChild(itemDiv);
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatbot Interface</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      #video-background {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        background-size: cover;
+      }
+      #content {
+        position: relative;
+        z-index: 1;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <video autoplay muted loop id="video-background">
+      <source
+        src="https://videos.pexels.com/video-files/853800/853800-hd_1920_1080_25fps.mp4"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
+
+    <div id="content">
+      <h1>Clothing Recommendation Chatbot</h1>
+      <form id="chatForm">
+        <label for="weather">Weather:</label><br />
+        <input type="text" id="weather" name="weather" /><br />
+        <label for="occasion">Occasion:</label><br />
+        <input type="text" id="occasion" name="occasion" /><br />
+        <label for="material">Material:</label><br />
+        <input type="text" id="material" name="material" /><br />
+        <input type="button" value="Submit" onclick="sendPreferences()" />
+      </form>
+
+      <h2>Recommendations:</h2>
+      <div id="recommendations"></div>
+    </div>
+
+    <script>
+      function sendPreferences() {
+        const weather = document.getElementById("weather").value;
+        const occasion = document.getElementById("occasion").value;
+        const material = document.getElementById("material").value;
+
+        fetch("/predict", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            weather: weather,
+            occasion: occasion,
+            material: material,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            const recommendationsDiv =
+              document.getElementById("recommendations");
+            recommendationsDiv.innerHTML = "";
+            data.recommended_clothes.forEach((item) => {
+              const itemDiv = document.createElement("div");
+              itemDiv.innerHTML = `<img src="${item.image_url}" alt="Image" style="width:100px;height:100px;"><br>
+                                         Weather: ${item.weather}<br>
+                                         Occasion: ${item.occasion}<br>
+                                         Material: ${item.material}<br>
+                                         Suitability: ${item.suitability}<br><br>`;
+              recommendationsDiv.appendChild(itemDiv);
+            });
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
+    </script>
+  </body>
+</html>

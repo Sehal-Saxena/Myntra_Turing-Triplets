@@ -1,0 +1,276 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hey", "Hello", "Good morning", "Good afternoon"],
+      "responses": [
+        "Hello! How can I assist you today?",
+        "Hi there! How can I help you?",
+        "Hey! What can I do for you?",
+        "Good morning! How can I assist you?",
+        "Good afternoon! How can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "Goodbye", "See you later", "Take care"],
+      "responses": [
+        "Goodbye! Have a great day!",
+        "See you later!",
+        "Take care!",
+        "Until next time! Have a wonderful day!"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "Thanks a lot"],
+      "responses": [
+        "You're welcome!",
+        "Happy to help!",
+        "Glad I could assist!",
+        "Anytime!",
+        "You bet!"
+      ]
+    },
+    {
+      "tag": "help",
+      "patterns": [
+        "Can you help me?",
+        "What can you do?",
+        "I need assistance",
+        "What should I do"
+      ],
+      "responses": [
+        "Sure, I can help you. What do you need assistance with? Please select a comparison category:",
+        [
+          "Weather",
+          "Fabric",
+          "Occasion",
+          "Body type",
+          "Customer ratings",
+          "Price",
+          "Care and maintenance",
+          "Exit"
+        ]
+      ]
+    },
+
+    {
+      "tag": "quality",
+      "patterns": [
+        "Compare based on quality",
+        "Which product has better quality?",
+        "Quality comparison"
+      ],
+      "responses": [
+        
+        [
+          "Cotton",
+          "Crepe",
+          "Silk",
+          "Denim",
+          "Linen",
+          "Wool",
+          "Polyester",
+          "Rayon"
+        ]
+      ]
+    },
+
+    {
+      "tag": "occasion",
+      "patterns": [
+        "Best fit for an occasion",
+        "Occasion comparison",
+        "Suitable for the event",
+        "What should I wear for a festival?",
+        "Suggest an outfit for a wedding",
+        "What's appropriate for a birthday party?",
+        "What do people wear for Diwali?",
+        "Give me options for a formal event",
+        "Outfit for a casual gathering",
+        "What's the best choice for Holi?",
+        "Suggestions for a traditional event"
+      ],
+      "responses": [
+        "Let's find the best fit for your occasion. Could you tell me more about the event?",
+        [
+          "Diwali",
+          "Holi",
+          "Wedding",
+          "Birthday Party",
+          "Formal Event",
+          "Casual Gathering",
+          "Traditional Event",
+          "Navratri",
+          "Christmas",
+          "office Party",
+          "Eid",
+          "New Year"
+        ]
+      ]
+    },
+
+    {
+      "tag": "weather",
+      "patterns": [
+        "Weather-appropriate clothing",
+        "Clothes for the weather",
+        "Weather comparison",
+        "What should I wear in this weather?",
+        "Suggest clothing based on the weather",
+        "Outfit for a rainy day",
+        "What to wear on a sunny day?",
+        "Clothing advice for winter",
+        "Summer outfit suggestions",
+        "What should I wear during a storm?",
+        "Best clothes for humid weather"
+      ],
+      "responses": [
+        
+        [
+          "Sunny",
+          "Rainy",
+          "Cold/Winter",
+          "Hot/Summer",
+          "Stormy",
+          "Humid",
+          "Windy"
+        ]
+      ]
+    },
+
+    {
+      "tag": "body_type",
+      "patterns": [
+        "Fit for body type",
+        "Body type comparison",
+        "Best fit for my body",
+        "Clothes for my body type",
+        "What fits my body shape?",
+        "Outfit suggestions for my body type",
+        "What should I wear for my body type?",
+        "Best clothes for my body shape",
+        "How to dress for my body type?",
+        "Suggestions for my body shape",
+        "What suits my body type?",
+        "Ideal outfit for my body type",
+        "Body type fashion advice"
+      ],
+      "responses": [
+        "Let's find clothes that best suit your body type. Could you describe your body shape?",
+        [
+          "Hourglass",
+          "Pear",
+          "Apple",
+          "Rectangle",
+          "Inverted Triangle",
+          "Athletic",
+          "Petite",
+          "Tall"
+        ]
+      ]
+    },
+    {
+      "tag": "ratings",
+      "patterns": [
+        "Compare based on ratings",
+        "Which product has better ratings?",
+        "Ratings comparison",
+        "Best rated products",
+        "Highest rated items",
+        "Product reviews comparison",
+        "Show products with best ratings",
+        "Which has the highest rating?",
+        "Top rated products",
+        "User ratings comparison",
+        "Product rating details"
+      ],
+      "responses": [
+        "Let's compare the products based on their ratings. What specific criteria are you looking at?",
+        [
+          "Overall Rating",
+          "Customer Reviews",
+          "Quality Rating",
+          "Value for Money",
+          "Durability",
+          "Design",
+          "Ease of Use"
+        ]
+      ]
+    },
+
+    {
+      "tag": "price",
+      "patterns": [
+        "Compare prices",
+        "Price comparison",
+        "Which product is cheaper?",
+        "Cheapest product",
+        "Price differences",
+        "Best value for money",
+        "Show products by price",
+        "Price check",
+        "Price range comparison",
+        "Lowest price items",
+        "How do prices compare?",
+        "Product pricing details"
+      ],
+      "responses": [
+        ["500","1000","20000"
+        ]
+      ]
+    },
+
+    {
+      "tag": "compare_care_maintenance",
+      "patterns": [
+        "Compare care instructions",
+        "Maintenance comparison",
+        "Which product is easier to care for?",
+        "Easiest care instructions",
+        "Care differences",
+        "Best care practices",
+        "Show products by care requirements",
+        "Care check",
+        "Maintenance comparison",
+        "Compare washing instructions"
+      ],
+      "responses": [
+        "Let's compare the products based on their care and maintenance requirements. What specific care criteria or instructions are you interested in?",
+        [
+          "Easiest Care Instructions",
+          "Most Durable",
+          "Lowest Maintenance",
+          "Eco-friendly Care Practices",
+          "Recommended Care Routine"
+        ]
+      ]
+    },
+    {
+      "tag": "farewell",
+      "patterns": [
+        "I have to go now",
+        "I'll talk to you later",
+        "It's time for me to leave",
+        "Goodbye for now",
+        "See you soon",
+        "Time to sign off"
+      ],
+      "responses": [
+        "Okay, take care!",
+        "Sure, talk to you later.",
+        "Goodbye! Have a great day.",
+        "See you next time!",
+        "Take care, and have a wonderful day!"
+      ]
+    },
+    {
+      "tag": "budget_inquiry",
+      "patterns": ["I want cotton"],
+      "responses": [
+        "Sure, I can help you find cotton products. What is your budget range?"
+      ]
+    }
+  ]
+}
